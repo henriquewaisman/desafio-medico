@@ -29,3 +29,4 @@ C:\dev\autoglass\linqTest\obj\Debug\net9.0\refint\linqTest.dll
 C:\dev\autoglass\linqTest\obj\Debug\net9.0\linqTest.pdb
 C:\dev\autoglass\linqTest\obj\Debug\net9.0\linqTest.genruntimeconfig.cache
 C:\dev\autoglass\linqTest\obj\Debug\net9.0\ref\linqTest.dll
+C:\dev\autoglass\linqTest\obj\Debug\net9.0\linqTest.sourcelink.json
