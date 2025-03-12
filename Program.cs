@@ -10,7 +10,7 @@ class Program
     {
         Console.Clear();
         ImportarDadosPlanilha();
-        Exe5();
+        Exe3();
     }
     private static void ImportarDadosPlanilha()
     {
@@ -73,15 +73,15 @@ class Program
     }
     public static void Exe3()
     {
-        var medicos = consultas.Select(m => new
+        var medicos = consultas.GroupBy(m => m.NomeMedico)
+        .Select(m => new
         {
-            nomeM = m.NomeMedico,
-            especialidadeM = m.Especialidade
+            nome = m.Key,
+            especialidade = m.Select(e => e.Especialidade).Distinct()
         });
         foreach (var medico in medicos)
         {
-            Console.WriteLine(medico.nomeM + " - " + medico.especialidadeM);
-            Console.WriteLine();
+            Console.WriteLine($"{medico.nome} - " + string.Join(", ", medico.especialidade));
         }
     }
     public static void Exe4()
