@@ -96,22 +96,21 @@ class Program
     }
     public static void Exe5()
     {
-        var consultaDiaTrinta = consultas
+        var diaConsulta = consultas
         .Select(c => new
         {
             nome = c.NomeMedico,
-            espec = c.Especialidade,
+            especialidade = c.Especialidade,
             horario = c.HoraDaConsulta,
             data = c.DataConsulta,
             particular = c.Particular
         }).Where(c => c.data.Day == 30);
 
-        Console.WriteLine($"Quantidade de consultas no dia 30/02: {consultaDiaTrinta.Count()}");
-        Console.WriteLine($"Quantidade de consultas particulares: {consultaDiaTrinta.Count(s => s.particular)}");
-
-        foreach (var consulta in consultaDiaTrinta)
+        Console.Write($"Para o dia 30/03 - Total de {diaConsulta.Count()} consultas. ");
+        Console.WriteLine($"{diaConsulta.Count(p => p.particular)} particulares e {diaConsulta.Count(p => !p.particular)} convênios\n");
+        foreach (var consulta in diaConsulta)
         {
-            Console.WriteLine($"{consulta.nome} - {consulta.espec} / {consulta.horario}");
+            Console.WriteLine($"{consulta.nome} - {consulta.especialidade} / {consulta.horario}");
         }
     }
 }
